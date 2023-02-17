@@ -51,8 +51,8 @@ public class FoodController {
 		service.wish_add(request, session, out);
 	}
 	
-	@RequestMapping("/food/menu")
-	public String food() {
-		return "/food/menu";
+	@RequestMapping("/excludes/menu_put")
+	public String menu_put(HttpSession session, Model model) {
+		return service.menu_put(session, model);
 	}
 }

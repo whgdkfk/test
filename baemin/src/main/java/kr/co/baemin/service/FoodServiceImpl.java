@@ -196,4 +196,11 @@ public class FoodServiceImpl implements FoodService{
 			}
 		}
 	}
+
+	@Override
+	public String menu_put(HttpSession session, Model model) {
+		String userid = session.getAttribute("userid").toString();
+		model.addAttribute("flist", mapper.menu_put(userid));
+		return "/excludes/menu_put";
+	}
 }

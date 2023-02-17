@@ -20,13 +20,13 @@
 		wish,star,phone,area,boss,regi_number,benefit,boss_gongji,
 		boss_one,m1,m1_img,m1_ex,m1_price,m2,m2_img,m2_ex,m2_price,
 		m3,m3_img,m3_ex,m3_price,m4,m4_img,m4_ex,m4_price,
-		m5,m5_img,m5_ex,m5_price,state,fran,writeday)
+		m5,m5_img,m5_ex,m5_price,state,fran,su,writeday)
 		values(#{fcode},#{fimg},#{shop},#{baeprice},#{baetime},#{minorder},
 		#{juso},#{shop_sogae},#{hours},#{holiday},#{recent_orders},#{total_orders},
 		#{wish},#{star},#{phone},#{area},#{boss},#{regi_number},#{benefit},#{boss_gongji},
 		#{boss_one},#{m1},#{m1_img},#{m1_ex},#{m1_price},#{m2},#{m2_img},#{m2_ex},#{m2_price},
 		#{m3},#{m3_img},#{m3_ex},#{m3_price},#{m4},#{m4_img},#{m4_ex},#{m4_price},
-		#{m5},#{m5_img},#{m5_ex},#{m5_price},#{state},#{fran},now())		
+		#{m5},#{m5_img},#{m5_ex},#{m5_price},#{state},#{fran},#{su},now())		
 	</insert>
 	
 	<select id="flist" resultType="kr.co.baemin.vo.FoodVo">
@@ -48,5 +48,9 @@
 	
 	<select id="getWish" resultType="int">
 		select count(*) from wish where fcode=#{param1} and userid=#{param2}
+	</select>
+	
+	<select id="menu_put" resultType="kr.co.baemin.vo.FoodVo">
+		select * from food where m1=#{param}
 	</select>
 </mapper>

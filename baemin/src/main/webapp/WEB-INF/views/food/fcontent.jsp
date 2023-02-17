@@ -2,6 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<% pageContext.setAttribute("replaceChar", "\n"); %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -297,6 +299,56 @@
 	section .menu, .info, .review {
 		text-align:left;
 	}
+	
+	section #mul,#mul2,#mul3,#mul4,#mul5 {
+		/* border:1px solid blue; */
+		height:200px;
+		cursor:pointer;
+	}
+	
+	section #mli,#mli2,#mli3,#mli4,#mli5 {
+		/* border:1px solid red; */
+		display:inline-block;
+		padding-top:20px;
+	}
+	
+	section #mul:hover,#mul2:hover,#mul3:hover,#mul4:hover,#mul5:hover {
+		background:white;
+		box-shadow:0px 3px 6px #ccc;
+	}
+	
+	section #infoli {
+		display:inline-block;
+		/* border:1px solid red; */
+		width:300px;
+		text-align:left;
+	}
+	
+	section #infoli2 {
+		display:inline-block;
+		/* border:1px solid blue; */
+		/* width:1000px; */
+		text-align:left;
+	}
+	
+	section #boss {
+		position:relative;
+		/* border:1px solid red; */
+		display:inline-block;
+		margin-top:150px;
+	}
+	
+	section #boss_one{
+		position:absolute;
+		display:inline-block;
+		/* border:1px solid blue; */
+		margin-left:10px;
+		margin-top:185px;
+	}
+	
+	/* section #bb {
+		border:1px solid black;
+	} */
 </style>
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
@@ -408,6 +460,10 @@
 		}else{
 				location="../login/login";
 		}
+	}
+	
+	function menu_detail(){
+		open("../excludes/menu_put", "", "width=500, height=620");
 	}
 </script>
 </head>
@@ -569,84 +625,98 @@
 				</ul>
 				<div class="tabBox on">
 				<div class="menu">
-					<h3>메뉴</h3>
-					<ul>
-						<li><img src="../resources/food/${ fvo.m1_img }" width="215" height="140"></li>
-						<li>${ fvo.m1 }</li>
-						<li>${ fvo.m1_ex }</li>
-						<li>${ fvo.m1_price }원</li>
+					<h3 style="text-align:center;padding-top:150px;height:100px;">대표메뉴</h3>
+					<ul id="mul" onclick="menu_detail()">
+						<li style="float:right;padding-right:30px;"><p><img src="../resources/food/${ fvo.m1_img }" width="215" height="140"></p></li>
+						<li id="mli"><b>${ fvo.m1 }</b></li> <br>
+						<li id="mli" style="color:#A6A6A6;font-size:16px;">${ fvo.m1_ex }</li> <br>
+						<li id="mli"><fmt:formatNumber value="${ fvo.m1_price }" pattern="#,###" type="number" />원</li> 
+					</ul> 
+					<ul id="mul2">
+						<li style="float:right;padding-right:30px;"><p><img src="../resources/food/${ fvo.m2_img }" width="215" height="140"></p></li>
+						<li id="mli2"><b>${ fvo.m2 }</b></li> <br>
+						<li id="mli2" style="color:#A6A6A6;font-size:16px;">${ fvo.m2_ex }</li> <br>
+						<li id="mli2"><fmt:formatNumber value="${ fvo.m2_price }" pattern="#,###" type="number" />원</li>
 					</ul>
-					<ul>
-						<li><img src="../resources/food/${ fvo.m2_img }" width="215" height="140"></li>
-						<li>${ fvo.m2 }</li>
-						<li>${ fvo.m2_ex }</li>
-						<li>${ fvo.m2_price }원</li>
+					<ul id="mul3">
+						<li style="float:right;padding-right:30px;"><p><img src="../resources/food/${ fvo.m3_img }" width="215" height="140"></p></li>
+						<li id="mli3"><b>${ fvo.m3 }</b></li> <br>
+						<li id="mli3" style="color:#A6A6A6;font-size:16px;">${ fvo.m3_ex }</li> <br>
+						<li id="mli3"><fmt:formatNumber value="${ fvo.m3_price }" pattern="#,###" type="number" />원</li>
 					</ul>
-					<ul>
-						<li><img src="../resources/food/${ fvo.m3_img }" width="215" height="140"></li>
-						<li>${ fvo.m3 }</li>
-						<li>${ fvo.m3_ex }</li>
-						<li>${ fvo.m3_price }원</li>
+					<ul id="mul4">
+						<li style="float:right;padding-right:30px;"><p><img src="../resources/food/${ fvo.m4_img }" width="215" height="140"></p></li>
+						<li id="mli4"><b>${ fvo.m4 }</b></li> <br>
+						<li id="mli4" style="color:#A6A6A6;font-size:16px;">${ fvo.m4_ex }</li> <br>
+						<li id="mli4"><fmt:formatNumber value="${ fvo.m4_price }" pattern="#,###" type="number" />원</li>
 					</ul>
-					<ul>
-						<li><img src="../resources/food/${ fvo.m4_img }" width="215" height="140"></li>
-						<li>${ fvo.m4 }</li>
-						<li>${ fvo.m4_ex }</li>
-						<li>${ fvo.m4_price }원</li>
-					</ul>
-					<ul>
-						<li><img src="../resources/food/${ fvo.m5_img }" width="215" height="140"></li>
-						<li>${ fvo.m5 }</li>
-						<li>${ fvo.m5_ex }</li>
-						<li>${ fvo.m5_price }원</li>
-					</ul>
+					<ul id="mul5">
+						<li style="float:right;padding-right:30px;"><p><img src="../resources/food/${ fvo.m5_img }" width="215" height="140"></p></li>
+						<li id="mli5"><b>${ fvo.m5 }</b></li> <br>
+						<li id="mli5" style="color:#A6A6A6;font-size:16px;">${ fvo.m5_ex }</li> <br>
+						<li id="mli5"><fmt:formatNumber value="${ fvo.m5_price }" pattern="#,###" type="number" />원</li>
+					</ul> 
 				</div>
 				</div>
 				<div class="tabBox">
 					<div class="info">
-						<h3>가게소개</h3>
-						<ul>
-							<li><p>${ fvo.shop_sogae }</p></li>
+						<h3 style=padding-top:150px;height:50px;">가게소개</h3>
+						<ul style="padding-left:0px;">
+							<li><p>${ fn:replace(fvo.shop_sogae, replaceChar, "<br/>") }</p></li>
 						</ul>
-						<h3>영업정보</h3>
-						<ul>
-							<li>상호명: ${ fvo.shop }</li>
-							<li>운영시간: ${ fvo.hours }</li>
-							<li>휴무일: ${ fvo.holiday }</li>
-							<li>전화번호: ${ fvo.phone }</li>
-							<li>배달지역: ${ fvo.area }</li>
+						<h3 style=padding-top:150px;height:50px;">영업정보</h3>
+						<ul style="padding-left:0px;">
+							<li id="infoli">상호명</li>
+							<li id="infoli2">${ fvo.shop }</li> <br>
+							<li id="infoli">운영시간</li>
+							<li id="infoli2">${ fvo.hours }</li> <br>
+							<li id="infoli">휴무일</li>
+							<li id="infoli2">${ fvo.holiday }</li> <br>
+							<li id="infoli">전화번호</li>
+							<li id="infoli2">${ fvo.phone }</li> <br>
+							<li id="infoli">배달지역</li>
+							<li id="infoli2">${ fvo.area }</li>
 						</ul>
-						<h3>안내 및 혜택</h3>
-						<ul>
-							<li><p>${ fvo.benefit }</p></li>
+						<h3 style=padding-top:150px;height:50px;">안내 및 혜택</h3>
+						<ul style="padding-left:0px;">
+							<li><p>${ fn:replace(fvo.benefit, replaceChar, "<br/>") }</p></li>
 						</ul>
-						<h3>가게 통계</h3>
-						<ul>
-							<li>최근 주문수: ${ fvo.recent_orders }+</li>
-							<li>전체 리뷰수: ${ fvo.total_orders }+</li>
-							<li>찜: ${ fvo.wish }</li>
+						<h3 style=padding-top:150px;height:50px;">가게 통계</h3>
+						<ul style="padding-left:0px;">
+							<li id="infoli">최근 주문수</li>
+							<li id="infoli2">${ fvo.recent_orders }+</li> <br>
+							<li id="infoli">전체 리뷰수</li>
+							<li id="infoli2">${ fvo.total_orders }+</li> <br>
+							<li id="infoli">찜</li>
+							<li id="infoli2">${ fvo.wish }</li>
 						</ul>
-						<h3>사업자 정보</h3>
-						<ul>
-							<li>대표자명: ${ fvo.boss }</li>
-							<li>상호명: ${ fvo.shop }</li>
-							<li>사업자주소: ${ fvo.juso }</li>
-							<li>사업자등록번호: ${ fvo.regi_number }</li>
+						<h3 style=padding-top:150px;height:50px;">사업자 정보</h3>
+						<ul style="padding-left:0px;">
+							<li id="infoli">대표자명</li>
+							<li id="infoli2">${ fvo.boss }</li> <br>
+							<li id="infoli">상호명</li>
+							<li id="infoli2">${ fvo.shop }</li> <br>
+							<li id="infoli">사업자주소</li>
+							<li id="infoli2">${ fvo.juso }</li> <br>
+							<li id="infoli">사업자등록번호</li>
+							<li id="infoli2">${ fvo.regi_number }</li> <br>
 						</ul>
 					</div>
 				</div>
 				<div class="tabBox">
 					<div class="review">
-						<h3>사장님 공지</h3>
-						<ul>
-							<li><p>${ fvo.boss_gongji }</p></li>
+						<h3 style=padding-top:150px;height:50px;">사장님 공지</h3>
+						<ul style="padding-left:0px;">
+							<li><p>${ fn:replace(fvo.boss_gongji, replaceChar, "<br/>") }</p></li>
 						</ul>
-						<h3>사장님 한마디</h3>
-						<ul>
-							<li><p>${ fvo.boss_one }</p></li>
+						<c:if test="${ fvo.boss_one } != null">
+						<div id="bb"><img id="boss" src="../resources/img/boss.PNG" width="100" height="90"><h3 id="boss_one">사장님 한마디</h3></div>
+						<ul style="padding-left:0px;">
+							<li><p>${ fn:replace(fvo.boss_one, replaceChar, "<br/>") }</p></li>
 						</ul>
-						<h3>리뷰</h3>
-						<ul>
+						</c:if>
+						<h3 style=padding-top:150px;height:50px;">리뷰</h3>
+						<ul style="padding-left:0px;">
 							<li><p>음식이맛있어요</p></li>
 							<li><p>음식이맛있어요</p></li>
 							<li><p>음식이맛있어요</p></li>

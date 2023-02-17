@@ -14,4 +14,5 @@ public interface FoodMapper {
 	public void wish_add(String fcode, String userid);
 	public void wish_del(String fcode, String userid);
 	public int getWish(String fcode, String userid);
+	public ArrayList<FoodVo> menu_put(String userid);
 }

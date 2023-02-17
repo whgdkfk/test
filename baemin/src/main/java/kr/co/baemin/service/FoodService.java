@@ -15,4 +15,5 @@ public interface FoodService {
 	public String flist(HttpServletRequest request, Model model);
 	public String fcontent(HttpServletRequest request, Model model, HttpSession session);
 	public void wish_add(HttpServletRequest request, HttpSession session, PrintWriter out);
+	public String menu_put(HttpSession session, Model model); // fcontent에서 메뉴 클릭했을 때
 }

@@ -1,7 +1,7 @@
 package kr.co.baemin.vo;
 
 public class FoodVo {
-	private int id,baeprice,minorder,recent_orders,total_orders,wish,star,state,fran;
+	private int id,baeprice,minorder,recent_orders,total_orders,wish,star,state,fran,su;
 	private String fcode,fimg,shop,baetime,juso,shop_sogae,hours,holiday,
 	phone,area,boss,regi_number,benefit,boss_gongji,boss_one,writeday;
 	private String m1,m1_img,m1_ex;
@@ -11,6 +11,12 @@ public class FoodVo {
 	private String m5,m5_img,m5_ex;
 	private int m1_price,m2_price,m3_price,m4_price,m5_price;
 	
+	public int getSu() {
+		return su;
+	}
+	public void setSu(int su) {
+		this.su = su;
+	}
 	public int getFran() {
 		return fran;
 	}
