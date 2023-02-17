@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybats-3-mapper.dtd">
+
+<!-- 연동할 인터페이스(경로) 이름 적어주기 -->
+<mapper namespace="kr.co.baemin.mapper.MypageMapper">
+	<select id="wishview" resultType="kr.co.baemin.vo.WishVo">
+		select f.fcode, f.fimg, f.shop, f.star, f.minorder, f.baeprice,
+		f.baetime, w.id, w.writeday from wish as w, food as f
+		where w.fcode=f.fcode and userid=#{param}
+	</select>
+	
+	<delete id="wishdel">
+		delete from wish where id=#{param}
+	</delete>
+</mapper>

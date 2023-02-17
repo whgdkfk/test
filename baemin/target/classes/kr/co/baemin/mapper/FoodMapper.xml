@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybats-3-mapper.dtd">
+
+<!-- 연동할 인터페이스(경로) 이름 적어주기 -->
+<mapper namespace="kr.co.baemin.mapper.FoodMapper">
+	<select id="getDae" resultType="kr.co.baemin.vo.DaeVo"> 
+		select * from dae order by id asc
+	</select>
+	
+	<select id="getCode" resultType="int">
+		select ifnull(max(right(fcode,3)),0)+1 from food
+		where fcode like concat(#{param},'%')
+	</select>
+	
+	<insert id="food_ok" parameterType="kr.co.baemin.vo.FoodVo">
+		insert into food(fcode,fimg,shop,baeprice,baetime,minorder,
+		juso,shop_sogae,hours,holiday,recent_orders,total_orders,
+		wish,star,phone,area,boss,regi_number,benefit,boss_gongji,
+		boss_one,m1,m1_img,m1_ex,m1_price,m2,m2_img,m2_ex,m2_price,
+		m3,m3_img,m3_ex,m3_price,m4,m4_img,m4_ex,m4_price,
+		m5,m5_img,m5_ex,m5_price,state,fran,writeday)
+		values(#{fcode},#{fimg},#{shop},#{baeprice},#{baetime},#{minorder},
+		#{juso},#{shop_sogae},#{hours},#{holiday},#{recent_orders},#{total_orders},
+		#{wish},#{star},#{phone},#{area},#{boss},#{regi_number},#{benefit},#{boss_gongji},
+		#{boss_one},#{m1},#{m1_img},#{m1_ex},#{m1_price},#{m2},#{m2_img},#{m2_ex},#{m2_price},
+		#{m3},#{m3_img},#{m3_ex},#{m3_price},#{m4},#{m4_img},#{m4_ex},#{m4_price},
+		#{m5},#{m5_img},#{m5_ex},#{m5_price},#{state},#{fran},now())		
+	</insert>
+	
+	<select id="flist" resultType="kr.co.baemin.vo.FoodVo">
+		select * from food where fcode like concat(#{param},'%')
+	</select>
+	
+	<select id="fcontent" resultType="kr.co.baemin.vo.FoodVo">
+		select * from food where fcode=#{param}
+	</select>
+	
+	<insert id="wish_add">
+		insert into wish(fcode,userid,writeday)
+		values(#{param1},#{param2},now())
+	</insert>
+	
+	<delete id="wish_del">
+		delete from wish where fcode=#{param1} and userid=#{param2}
+	</delete>
+	
+	<select id="getWish" resultType="int">
+		select count(*) from wish where fcode=#{param1} and userid=#{param2}
+	</select>
+</mapper>
