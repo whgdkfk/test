@@ -14,4 +14,17 @@
 	<delete id="wishdel">
 		delete from wish where id=#{param}
 	</delete>
+	
+	<insert id="cartadd">
+		insert into cart(fcode,userid,su,writeday)
+		values(#{parma1},#{param2},#{param3},now())
+	</insert>
+	
+	<select id="cartview" resultType="kr.co.baemin.vo.CartVo">
+		select c.fcode, f.fimg, f.shop, f.m1_price, f.m2_price, 
+		f.m3_price, f.m4_price, f.m5_price,
+		f.baeprice, c.id, c.writeday, c.su
+		from cart as c, food as f
+		where userid=#{param} and c.fcode=f.fcode
+	</select>
 </mapper>

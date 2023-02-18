@@ -18,10 +18,13 @@
 		margin-top:12px;
 	}
 </style>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script> 
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
 <script>
-	$(function() {
-		var $imsi = $(".su");
-		$(".su").spinner({
+	/* $(function() {
+		var $imsi = $(".m1_su");
+		$(".m1_su").spinner({
 			min:1,
 			max:10,
 			
@@ -54,13 +57,13 @@
 				chk.send();
 			}
 		});
-	});
+	}); */
 </script>
 </head>
 <body>
 	<section>
+		<table width="480" border="1">
 		<c:forEach items="${ flist }" var="fvo">
-		<table width="500" border="1">
 			<tr>
 				<td colspan="2" align="center">
 					<img src="../resources/food/${ fvo.m1_img }" width="300" height="200">
@@ -69,6 +72,7 @@
 			<tr height="100">
 				<td colspan="2" align="center">
 					<b>${ fvo.m1 }</b>
+					<span>${ fvo.m1_ex }</span>
 				</td>
 			</tr>
 			<tr>
@@ -77,7 +81,7 @@
 			</tr>
 			<tr>
 				<td>수량</td>
-				<td align="right"><input type="text" name="su" class="su" value="${ fvo.su }" readonly>개</td>
+				<td align="right"><input type="text" name="m1_su" class="m1_su" value="${ fvo.m1_su }" readonly>개</td>
 			</tr>
 			<tr>
 				<td>
@@ -85,11 +89,11 @@
 					${ fvo.minorder }
 				</td>
 				<td>
-					<input type="button" onclick="location='../food/fcontent'" value="<fmt:formatNumber value="${ fvo.m1_price*fvo.su }" pattern="#,###" type="number" />원 담기">
+					<input type="button" onclick="location='../mybaemin/cartview'" value="<fmt:formatNumber value="${ fvo.m1_price*fvo.m1_su }" pattern="#,###" type="number" />원 담기">
 				</td>
 			</tr>
-		</table>
 		</c:forEach>
+		</table>
 	</section>
 </body>
 </html>

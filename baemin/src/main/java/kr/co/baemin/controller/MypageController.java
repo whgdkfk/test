@@ -26,4 +26,14 @@ public class MypageController {
 	public String wishdel(HttpServletRequest request) {
 		return service.wishdel(request);
 	}
+	
+	@RequestMapping("/mybaemin/cartadd")
+	public String card_add(HttpServletRequest request, HttpSession session) {
+		return service.cartadd(request, session);
+	}
+	
+	@RequestMapping("/mybaemin/cartview")
+	public String cartview(HttpSession session, Model model) {
+		return service.cartview(session, model);
+	}
 }

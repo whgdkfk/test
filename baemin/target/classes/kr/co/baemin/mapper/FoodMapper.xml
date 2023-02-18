@@ -52,6 +52,6 @@
 	</select>
 	
 	<select id="menu_put" resultType="kr.co.baemin.vo.FoodVo">
-		select * from food where m1=#{param}
+		select * from food where userid=#{param}
 	</select>
 </mapper>
