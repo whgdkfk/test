@@ -1,7 +1,8 @@
 package kr.co.baemin.vo;
 
 public class FoodVo {
-	private int id,baeprice,minorder,recent_orders,total_orders,wish,star,state,fran,su;
+	private int id,baeprice,minorder,recent_orders,total_orders,wish,star,state,fran;
+	private int m1_su,m2_su,m3_su,m4_su,m5_su;
 	private String fcode,fimg,shop,baetime,juso,shop_sogae,hours,holiday,
 	phone,area,boss,regi_number,benefit,boss_gongji,boss_one,writeday;
 	private String m1,m1_img,m1_ex;
@@ -11,11 +12,35 @@ public class FoodVo {
 	private String m5,m5_img,m5_ex;
 	private int m1_price,m2_price,m3_price,m4_price,m5_price;
 	
-	public int getSu() {
-		return su;
+	public int getM1_su() {
+		return m1_su;
 	}
-	public void setSu(int su) {
-		this.su = su;
+	public void setM1_su(int m1_su) {
+		this.m1_su = m1_su;
+	}
+	public int getM2_su() {
+		return m2_su;
+	}
+	public void setM2_su(int m2_su) {
+		this.m2_su = m2_su;
+	}
+	public int getM3_su() {
+		return m3_su;
+	}
+	public void setM3_su(int m3_su) {
+		this.m3_su = m3_su;
+	}
+	public int getM4_su() {
+		return m4_su;
+	}
+	public void setM4_su(int m4_su) {
+		this.m4_su = m4_su;
+	}
+	public int getM5_su() {
+		return m5_su;
+	}
+	public void setM5_su(int m5_su) {
+		this.m5_su = m5_su;
 	}
 	public int getFran() {
 		return fran;

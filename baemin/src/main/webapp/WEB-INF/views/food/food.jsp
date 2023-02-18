@@ -137,7 +137,7 @@
 					<td><input type="text" name="baeprice"></td>
 				</tr>
 				<tr>
-					<td>배송시간</td>
+					<td>배달시간</td>
 					<td><input type="text" name="baetime"></td>
 				</tr>
 				<tr>
@@ -229,6 +229,10 @@
 					<td><input type="text" name="m1_price"></td>
 				</tr>
 				<tr>
+					<td>메뉴1 수량</td>
+					<td><input type="text" name="m1_su" value="100"></td>
+				</tr>
+				<tr>
 					<td>메뉴2</td>
 					<td><input type="text" name="m2"></td>
 				</tr>
@@ -243,6 +247,10 @@
 				<tr>
 					<td>메뉴2 가격</td>
 					<td><input type="text" name="m2_price"></td>
+				</tr>
+				<tr>
+					<td>메뉴2 수량</td>
+					<td><input type="text" name="m2_su" value="100"></td>
 				</tr>
 				<tr>
 					<td>메뉴3</td>
@@ -261,6 +269,10 @@
 					<td><input type="text" name="m3_price"></td>
 				</tr>
 				<tr>
+					<td>메뉴3 수량</td>
+					<td><input type="text" name="m3_su" value="100"></td>
+				</tr>
+				<tr>
 					<td>메뉴4</td>
 					<td><input type="text" name="m4"></td>
 				</tr>
@@ -277,6 +289,10 @@
 					<td><input type="text" name="m4_price"></td>
 				</tr>
 				<tr>
+					<td>메뉴4 수량</td>
+					<td><input type="text" name="m4_su" value="100"></td>
+				</tr>
+				<tr>
 					<td>메뉴5</td>
 					<td><input type="text" name="m5"></td>
 				</tr>
@@ -291,6 +307,10 @@
 				<tr>
 					<td>메뉴5 가격</td>
 					<td><input type="text" name="m5_price"></td>
+				</tr>
+				<tr>
+					<td>메뉴5 수량</td>
+					<td><input type="text" name="m5_su" value="100"></td>
 				</tr>
 				<tr>
 					<td colspan="2" align="center">

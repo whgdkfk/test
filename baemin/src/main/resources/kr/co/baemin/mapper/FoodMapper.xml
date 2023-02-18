@@ -20,13 +20,14 @@
 		wish,star,phone,area,boss,regi_number,benefit,boss_gongji,
 		boss_one,m1,m1_img,m1_ex,m1_price,m2,m2_img,m2_ex,m2_price,
 		m3,m3_img,m3_ex,m3_price,m4,m4_img,m4_ex,m4_price,
-		m5,m5_img,m5_ex,m5_price,state,fran,su,writeday)
+		m5,m5_img,m5_ex,m5_price,m1_su,m2_su,m3_su,m4_su,m5_su,state,fran,writeday)
 		values(#{fcode},#{fimg},#{shop},#{baeprice},#{baetime},#{minorder},
 		#{juso},#{shop_sogae},#{hours},#{holiday},#{recent_orders},#{total_orders},
 		#{wish},#{star},#{phone},#{area},#{boss},#{regi_number},#{benefit},#{boss_gongji},
 		#{boss_one},#{m1},#{m1_img},#{m1_ex},#{m1_price},#{m2},#{m2_img},#{m2_ex},#{m2_price},
 		#{m3},#{m3_img},#{m3_ex},#{m3_price},#{m4},#{m4_img},#{m4_ex},#{m4_price},
-		#{m5},#{m5_img},#{m5_ex},#{m5_price},#{state},#{fran},#{su},now())		
+		#{m5},#{m5_img},#{m5_ex},#{m5_price},#{m1_su},#{m2_su},#{m3_su},#{m4_su},#{m5_su},
+		#{state},#{fran},now())		
 	</insert>
 	
 	<select id="flist" resultType="kr.co.baemin.vo.FoodVo">

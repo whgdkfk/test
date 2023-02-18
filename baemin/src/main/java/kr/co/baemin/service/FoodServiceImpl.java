@@ -85,6 +85,11 @@ public class FoodServiceImpl implements FoodService{
 		String m5_img = multi.getFilesystemName("m5_img");
 		String m5_ex = multi.getParameter("m5_ex");
 		int m5_price = Integer.parseInt(multi.getParameter("m5_price"));
+		int m1_su = Integer.parseInt(multi.getParameter("m1_su"));
+		int m2_su = Integer.parseInt(multi.getParameter("m2_su"));
+		int m3_su = Integer.parseInt(multi.getParameter("m3_su"));
+		int m4_su = Integer.parseInt(multi.getParameter("m4_su"));
+		int m5_su = Integer.parseInt(multi.getParameter("m5_su"));
 		// int state = Integer.parseInt(multi.getParameter("state"));
 		
 		int state;
@@ -143,6 +148,11 @@ public class FoodServiceImpl implements FoodService{
 		fvo.setM5_img(m5_img);
 		fvo.setM5_ex(m5_ex);
 		fvo.setM5_price(m5_price);
+		fvo.setM1_su(m1_su);
+		fvo.setM2_su(m2_su);
+		fvo.setM3_su(m3_su);
+		fvo.setM4_su(m4_su);
+		fvo.setM5_su(m5_su);
 		fvo.setState(state);
 		fvo.setFran(fran);
 		

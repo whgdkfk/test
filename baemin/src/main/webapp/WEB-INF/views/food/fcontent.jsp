@@ -312,6 +312,11 @@
 		padding-top:20px;
 	}
 	
+	section #mli_ex,#mli2_ex,#mli3_ex,#mli4_ex,#mli5_ex {
+		/* background:yellow; */
+		width:600px;
+	}
+	
 	section #mul:hover,#mul2:hover,#mul3:hover,#mul4:hover,#mul5:hover {
 		background:white;
 		box-shadow:0px 3px 6px #ccc;
@@ -320,14 +325,14 @@
 	section #infoli {
 		display:inline-block;
 		/* border:1px solid red; */
-		width:300px;
+		width:200px;
 		text-align:left;
 	}
 	
 	section #infoli2 {
 		display:inline-block;
 		/* border:1px solid blue; */
-		/* width:1000px; */
+		width:700px;
 		text-align:left;
 	}
 	
@@ -629,41 +634,43 @@
 					<ul id="mul" onclick="menu_detail()">
 						<li style="float:right;padding-right:30px;"><p><img src="../resources/food/${ fvo.m1_img }" width="215" height="140"></p></li>
 						<li id="mli"><b>${ fvo.m1 }</b></li> <br>
-						<li id="mli" style="color:#A6A6A6;font-size:16px;">${ fvo.m1_ex }</li> <br>
+						<li id="mli_ex" style="color:#A6A6A6;font-size:16px;">${ fvo.m1_ex }</li> <br>
 						<li id="mli"><fmt:formatNumber value="${ fvo.m1_price }" pattern="#,###" type="number" />원</li> 
 					</ul> 
 					<ul id="mul2">
 						<li style="float:right;padding-right:30px;"><p><img src="../resources/food/${ fvo.m2_img }" width="215" height="140"></p></li>
 						<li id="mli2"><b>${ fvo.m2 }</b></li> <br>
-						<li id="mli2" style="color:#A6A6A6;font-size:16px;">${ fvo.m2_ex }</li> <br>
+						<li id="mli2_ex" style="color:#A6A6A6;font-size:16px;">${ fvo.m2_ex }</li> <br>
 						<li id="mli2"><fmt:formatNumber value="${ fvo.m2_price }" pattern="#,###" type="number" />원</li>
 					</ul>
 					<ul id="mul3">
 						<li style="float:right;padding-right:30px;"><p><img src="../resources/food/${ fvo.m3_img }" width="215" height="140"></p></li>
 						<li id="mli3"><b>${ fvo.m3 }</b></li> <br>
-						<li id="mli3" style="color:#A6A6A6;font-size:16px;">${ fvo.m3_ex }</li> <br>
+						<li id="mli3_ex" style="color:#A6A6A6;font-size:16px;">${ fvo.m3_ex }</li> <br>
 						<li id="mli3"><fmt:formatNumber value="${ fvo.m3_price }" pattern="#,###" type="number" />원</li>
 					</ul>
 					<ul id="mul4">
 						<li style="float:right;padding-right:30px;"><p><img src="../resources/food/${ fvo.m4_img }" width="215" height="140"></p></li>
 						<li id="mli4"><b>${ fvo.m4 }</b></li> <br>
-						<li id="mli4" style="color:#A6A6A6;font-size:16px;">${ fvo.m4_ex }</li> <br>
+						<li id="mli4_ex" style="color:#A6A6A6;font-size:16px;">${ fvo.m4_ex }</li> <br>
 						<li id="mli4"><fmt:formatNumber value="${ fvo.m4_price }" pattern="#,###" type="number" />원</li>
 					</ul>
 					<ul id="mul5">
 						<li style="float:right;padding-right:30px;"><p><img src="../resources/food/${ fvo.m5_img }" width="215" height="140"></p></li>
 						<li id="mli5"><b>${ fvo.m5 }</b></li> <br>
-						<li id="mli5" style="color:#A6A6A6;font-size:16px;">${ fvo.m5_ex }</li> <br>
+						<li id="mli5_ex" style="color:#A6A6A6;font-size:16px;">${ fvo.m5_ex }</li> <br>
 						<li id="mli5"><fmt:formatNumber value="${ fvo.m5_price }" pattern="#,###" type="number" />원</li>
 					</ul> 
 				</div>
 				</div>
 				<div class="tabBox">
 					<div class="info">
+						<c:if test="${ fvo.shop_sogae } != null">
 						<h3 style=padding-top:150px;height:50px;">가게소개</h3>
 						<ul style="padding-left:0px;">
 							<li><p>${ fn:replace(fvo.shop_sogae, replaceChar, "<br/>") }</p></li>
 						</ul>
+						</c:if>
 						<h3 style=padding-top:150px;height:50px;">영업정보</h3>
 						<ul style="padding-left:0px;">
 							<li id="infoli">상호명</li>
@@ -675,7 +682,7 @@
 							<li id="infoli">전화번호</li>
 							<li id="infoli2">${ fvo.phone }</li> <br>
 							<li id="infoli">배달지역</li>
-							<li id="infoli2">${ fvo.area }</li>
+							<li id="infoli2" width="200">${ fvo.area }</li>
 						</ul>
 						<h3 style=padding-top:150px;height:50px;">안내 및 혜택</h3>
 						<ul style="padding-left:0px;">
