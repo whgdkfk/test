@@ -54,4 +54,8 @@
 	<select id="menu_put" resultType="kr.co.baemin.vo.FoodVo">
 		select * from food where userid=#{param}
 	</select>
+	
+	<select id="one" resultType="kr.co.baemin.vo.FoodVo">
+		select * from food where state=1
+	</select>
 </mapper>

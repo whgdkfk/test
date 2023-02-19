@@ -55,4 +55,9 @@ public class FoodController {
 	public String menu_put(HttpSession session, Model model) {
 		return service.menu_put(session, model);
 	}
+	
+	@RequestMapping("/food/one")
+	public String one(HttpServletRequest request, Model model) {
+		return service.one(request, model);
+	}
 }

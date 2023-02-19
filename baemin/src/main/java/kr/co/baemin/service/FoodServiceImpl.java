@@ -213,4 +213,12 @@ public class FoodServiceImpl implements FoodService{
 		model.addAttribute("flist", mapper.menu_put(userid));
 		return "/excludes/menu_put";
 	}
+
+	@Override
+	public String one(HttpServletRequest request, Model model) {
+		String state = request.getParameter("state");
+		ArrayList<FoodVo> one = mapper.one(state);
+		model.addAttribute("one", one);
+		return "/food/one";
+	}
 }
